@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
+        headline: ['Roboto', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -65,6 +65,13 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        /* Sudoku Specific */
+        success: 'hsl(var(--success))',
+        warning: 'hsl(var(--warning))',
+        'selected': 'hsl(var(--selected-cell))',
+        'related': 'hsl(var(--related-cell))',
+        'conflict': 'hsl(var(--conflict-cell))',
+        'gridlines': 'hsl(var(--grid-lines))',
       },
       borderRadius: {
         lg: 'var(--radius)',
