@@ -13,7 +13,12 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
-const SudokuGridSchema = z.array(z.array(z.number().min(0).max(9))).length(9).element(z.array(z.number().min(0).max(9)).length(9));
+// Define a single Sudoku row (9 numbers between 0–9)
+const SudokuRowSchema = z.array(z.number().min(0).max(9)).length(9);
+
+// Define the full Sudoku grid (9 rows)
+const SudokuGridSchema = z.array(SudokuRowSchema).length(9);
+
 
 const GenerateHintInputSchema = z.object({
   grid: SudokuGridSchema.describe('The current state of the Sudoku grid. Use 0 for empty cells.'),
